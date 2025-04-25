@@ -10,7 +10,7 @@ int pr[10000005];
 int main() {
     scanf("%d", &n);
     while(n) {
-        scanf("%s", &s);
+        scanf("%s", s);
         m = strlen(s);
 
         for(i = 0; i < m; i++) {
