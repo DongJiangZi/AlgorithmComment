@@ -6,26 +6,6 @@
 
 // @lc code=start
 int numSubarrayProductLessThanK(int* nums, int numsSize, int k) {
-    int l = 0, r = 0, ans = 0;
-    long mul = 1;
-    while(r <= numsSize - 1) {
-        mul *= nums[r];
-        if(mul >= k) {
-            while(l < r && mul / nums[l] >= k) {
-                mul /= nums[l];
-                l++;
-            }
-            ans += r - l;   
-        }
-        r++;
-    }
-    return ans;
-}
-// @lc code=end
-
-
-int numSubarrayProductLessThanK(int* nums, int numsSize, int k) 
-{
     if (k <= 1) return 0;
     int l = 0, ans = 0;
     long mul = 1;
@@ -39,3 +19,4 @@ int numSubarrayProductLessThanK(int* nums, int numsSize, int k)
     }
     return ans;
 }
+// @lc code=end

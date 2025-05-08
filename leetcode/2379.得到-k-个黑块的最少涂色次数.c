@@ -6,9 +6,8 @@
 
 // @lc code=start
 int minimumRecolors(char* blocks, int k) {
-<<<<<<< HEAD
     int inbl[100];
-    int i, ans, n = strlen(blocks), r = 0, l = 0, sum = 0;
+    int i, ans = 100, n = strlen(blocks), r = 0, l = 0, sum = 0;
     for(i = 0; i < n; i++) {
         if(blocks[i] == 'W') {
             inbl[i] = 0;
@@ -16,17 +15,17 @@ int minimumRecolors(char* blocks, int k) {
             inbl[i] = 1;
         }
     }
-    while(r < n) {
+    for(r = 0; r < n; r++) {
         sum += inbl[r];
-        while(r - l > 6 && ) {
-            l++;
+        while(r - l >= k) {
+            sum -= inbl[l];
+            ++l;
         }
-        r++;
+        if(k - sum < ans) {
+            ans = k - sum;
+        }
     }
     return ans;
-=======
-    
->>>>>>> ca2aab9bca5795570b4d2766bf97069c5cea1d14
 }
 // @lc code=end
 
